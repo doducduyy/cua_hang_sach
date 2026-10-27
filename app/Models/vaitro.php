@@ -9,4 +9,10 @@ class vaitro extends Model
 {
     /** @use HasFactory<\Database\Factories\VaitroFactory> */
     use HasFactory;
+    protected $table = 'vaitros';
+    protected $fillable = ['tenvaitro'];
+    public function users()
+    {
+        return $this->hasMany(User::class, 'vaitro_id');
+    }
 }
